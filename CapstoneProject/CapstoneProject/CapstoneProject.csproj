@@ -124,10 +124,19 @@
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Global.asax" />
+    <Content Include="home.html" />
     <Content Include="index.html" />
+    <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\buzz\buzz.js" />
+    <Content Include="Scripts\buzz\buzz.min.js" />
+    <Content Include="Scripts\CapstoneApp\App.js" />
+    <Content Include="Sounds\16300_ltibbits_snare_2_high_vol.wav" />
+    <Content Include="Sounds\16317_ltibbits_tom_13_tight_low_vol.wav" />
+    <Content Include="Sounds\45666_pjcohen_Zildjian_A_Custom_Hi_Hat_Cymbals_Loose_Hit.WAV" />
+    <Content Include="Sounds\ctu-24-ringtone.mp3" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -141,7 +150,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\CapstoneApp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,13 +1,26 @@
 ﻿<!DOCTYPE html>
-<html ng-app=""xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="SongApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/CapstoneApp/App.js"></script>
+    <script src="Scripts/buzz/buzz.js"></script>
+    <link href="Content/css/bootstrap.css" rel="stylesheet" />
     <title>Capstone Project</title>
 </head>
 <body>
-    <input type="text" ng-model="name" /> {{name}}
-    <!--<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Sound Finder</a>
+            <ul class="nav">
+                <li class="active"><a href="">Home</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Browse</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
         <div ng-view></div>
-    </div>-->
+    </div>
 </body>
 </html>
