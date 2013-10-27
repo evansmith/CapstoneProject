@@ -1,6 +1,31 @@
-﻿<div ng-repeat="sound in sounds">
+﻿
+
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Sound Title</th>
+            <th>Description</th>
+            <th>Length</th>
+            <th>Sample</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="sound in sounds">
+            <td>{{sound.name}}</td>
+            <td>{{sound.description}}</td>
+            <td>{{getSoundDuration(sound.sound)}}</td>
+            <td><a href="#" ng-click="play(sound.sound)"><i class="icon-volume-up"></i> Preview</a></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<!--<div ng-repeat="sound in sounds">
     <a href="#" ng-click="play(sound.sound)">Test Me Out</a>
 
-</div>
+</div>-->
 
 
