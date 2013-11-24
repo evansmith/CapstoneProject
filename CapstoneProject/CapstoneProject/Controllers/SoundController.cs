@@ -22,9 +22,9 @@ namespace CapstoneProject.Controllers
         //
         // GET: /Sound/Details/5
 
-        public ActionResult Details(int id)
+        public JsonResult Details(int id)
         {
-            return View();
+            return null;
         }
 
         //
