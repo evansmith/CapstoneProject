@@ -104,5 +104,15 @@ namespace CapstoneProject.Controllers
                 return View();
             }
         }
+        public ActionResult Template(string template)
+        {
+            switch(template.ToLower())
+            {
+                case "index":
+                    return PartialView("~/CapstoneProject/Views/Sound/home.cshtml");
+                default:
+                    throw new Exception("template not known");
+            }
+        }
     }
 }

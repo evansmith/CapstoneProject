@@ -1,4 +1,5 @@
-﻿var SongApp = angular.module("SongApp", ["ngResource"]).
+﻿
+var SongApp = angular.module("SongApp", ["ngResource"]).
     config(function ($routeProvider) {
         $routeProvider.
             when('/', { controller: MainCtrl, templateUrl: 'home.html' }).

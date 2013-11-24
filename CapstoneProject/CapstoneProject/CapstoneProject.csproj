@@ -164,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sound\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -173,6 +172,12 @@
     <EmbeddedResource Include="Migrations\201311232136561_InitialCreate.resx">
       <DependentUpon>201311232136561_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sound\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sound\home.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
