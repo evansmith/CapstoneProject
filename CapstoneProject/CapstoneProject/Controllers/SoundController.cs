@@ -1,118 +1,45 @@
-﻿using System;
+﻿using CapstoneProject.DAL;
+using CapstoneProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using CapstoneProject.DAL;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace CapstoneProject.Controllers
 {
-    public class SoundController : Controller
+    public class SoundController : ApiController
     {
-
         private SoundContext db = new SoundContext();
-        //
-        // GET: /Sound/
-
-        public ActionResult Index()
+        // GET api/sound
+        public IEnumerable<Sound> GetSounds()
         {
-            return View();
+            return db.Sounds.AsEnumerable();
         }
 
-        //
-        // GET: /Sound/Details/5
-
-        public JsonResult Details(int id)
+        // GET api/sound/5
+        public Sound GetSound(int id)
         {
-            return null;
+            Sound sound = db.Sounds.Find(id);
+            if (sound == null)
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+            return sound; 
         }
 
-        //
-        // GET: /Sound/Create
-
-        public ActionResult Create()
+        // POST api/sound
+        public void Post([FromBody]string value)
         {
-            return View();
         }
 
-        //
-        // POST: /Sound/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        // PUT api/sound/5
+        public void Put(int id, [FromBody]string value)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
-        //
-        // GET: /Sound/Edit/5
-
-        public ActionResult Edit(int id)
+        // DELETE api/sound/5
+        public void Delete(int id)
         {
-            return View();
-        }
-
-        //
-        // POST: /Sound/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Sound/Delete/5
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Sound/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        public ActionResult Template(string template)
-        {
-            switch(template.ToLower())
-            {
-                case "index":
-                    return PartialView("~/CapstoneProject/Views/Sound/home.cshtml");
-                default:
-                    throw new Exception("template not known");
-            }
         }
     }
 }

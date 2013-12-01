@@ -12,10 +12,10 @@
     </thead>
     <tbody>
         <tr ng-repeat="sound in sounds">
-            <td>{{sound.name}}</td>
-            <td>{{sound.description}}</td>
-            <td>{{sound.length}}</td>
-            <td><a href="#" ng-click="play(sound.sound)"><i class="icon-volume-up"></i> Preview</a></td>
+            <td>{{sound.Title}}</td>
+            <td>{{sound.Genre}}</td>
+            <td>{{sound.Time}}</td>
+            <td><a href="#" ng-click="play(sound)"><i class="icon-volume-up"></i> Preview</a></td>
         </tr>
     </tbody>
 </table>
