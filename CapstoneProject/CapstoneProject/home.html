@@ -11,11 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="sound in sounds">
+        <tr ng-repeat="sound in sounds" >
             <td>{{sound.Title}}</td>
             <td>{{sound.Genre}}</td>
             <td>{{sound.Time}}</td>
-            <td><a href="#" ng-click="play(sound)"><i class="icon-volume-up"></i> Preview</a></td>
+            <td><button ng-click="play(sound)"><i class="icon-volume-up"></i> Preview</button> <button ng-click="stop(sound)"><i class="icon-stop"</i></button></td>
         </tr>
     </tbody>
 </table>
