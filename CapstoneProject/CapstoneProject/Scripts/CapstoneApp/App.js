@@ -13,16 +13,22 @@ SongApp.factory('SoundFactory', function ($resource) {
 
 var MainCtrl = function ($scope, $location, SoundFactory) {
 
-    $scope.init = function () {
+    //$scope.init = function () {
 
-        $scope.sounds = SoundFactory.query();
-    }
-
-    $scope.init();
-    $scope.currentSong; 
-    //write a method here that creates a sound more efficiently
+        
+    //}
+    //$scope.init();
+    $scope.sounds = SoundFactory.query();
     
+    $scope.currentSong; 
+
+    $scope.reset = function () {
+        $scope.sounds = SoundFactory.query({ s: $scope.search });
+    };
+
     $scope.play = function (Sound) {
+        if ($scope.currentSong != null)
+            $scope.currentSong.stop();
         $scope.currentSong = new buzz.sound(Sound.Location);
         console.log("im being clicked!", Sound.Location);
         $scope.currentSong.play();
@@ -31,8 +37,5 @@ var MainCtrl = function ($scope, $location, SoundFactory) {
     $scope.stop = function (Sound) {
         $scope.currentSong.stop();
     };
-
-
-    //write a stop function here
 
 };

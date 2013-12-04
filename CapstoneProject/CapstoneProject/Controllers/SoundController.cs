@@ -2,6 +2,7 @@
 using CapstoneProject.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,9 +14,17 @@ namespace CapstoneProject.Controllers
     {
         private SoundContext db = new SoundContext();
         // GET api/sound
-        public IEnumerable<Sound> GetSounds()
+        public IEnumerable<Sound> GetSounds(string s = null, string sort = null, bool desc = false)
         {
-            return db.Sounds.AsEnumerable();
+            var soundList = ((IObjectContextAdapter)db).ObjectContext.CreateObjectSet<Sound>();
+            IQueryable<Sound> sounds = string.IsNullOrEmpty(sort) ? soundList.OrderBy(o => o.SoundID)
+                : soundList.OrderBy(String.Format("it.{0} {1}", sort, desc ? "DESC" : "ASC"));
+            if (!string.IsNullOrEmpty(s) && s != "undefined")
+            {
+                sounds = sounds.Where(t => t.Title.Contains(s) || t.Genre.Contains(s));
+            }
+
+            return sounds;
         }
 
         // GET api/sound/5
