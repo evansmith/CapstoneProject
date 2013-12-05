@@ -149,9 +149,10 @@
     <Content Include="Scripts\buzz\buzz.js" />
     <Content Include="Scripts\buzz\buzz.min.js" />
     <Content Include="Scripts\CapstoneApp\App.js" />
-    <Content Include="Sounds\1 Continuous Thunder.aiff" />
+    <Content Include="Sounds\1 Continuous Thunder.mp3" />
     <Content Include="Sounds\16300_ltibbits_snare_2_high_vol.wav" />
     <Content Include="Sounds\16317_ltibbits_tom_13_tight_low_vol.wav" />
+    <Content Include="Sounds\2 Champagne Cork Pops.mp3" />
     <Content Include="Sounds\45666_pjcohen_Zildjian_A_Custom_Hi_Hat_Cymbals_Loose_Hit.WAV" />
     <Content Include="Sounds\ctu-24-ringtone.mp3" />
     <Content Include="Web.config" />
