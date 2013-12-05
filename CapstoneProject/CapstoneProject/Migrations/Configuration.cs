@@ -18,7 +18,8 @@ namespace CapstoneProject.Migrations
         {
             var sounds = new List<Sound> {
                new Sound { Title = "24 Beep", Genre = "Television", Location = "http://localhost:50990/Sounds/ctu-24-ringtone.mp3", Time = "00:03"},
-               new Sound {Title = "Hi-Hat", Genre="Drums", Location = "http://localhost:50990/Sounds/45666_pjcohen_Zildjian_A_Custom_Hi_Hat_Cymbals_Loose_Hit.WAV", Time = "00:01"} 
+               new Sound {Title = "Hi-Hat", Genre="Drums", Location = "http://localhost:50990/Sounds/45666_pjcohen_Zildjian_A_Custom_Hi_Hat_Cymbals_Loose_Hit.WAV", Time = "00:01"},
+               //new Sound {Title = "1 Continous Thunder", Genre="Nature", Location = "
            };
 
             for(int i = 0; i < sounds.Count; i++){
