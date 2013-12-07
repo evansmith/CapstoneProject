@@ -16,6 +16,7 @@ namespace CapstoneProject.Migrations
 
         protected override void Seed(CapstoneProject.DAL.SoundContext context)
         {
+            //This seed method populates initial data into the database. 
             var sounds = new List<Sound> {
                new Sound { Title = "24 Beep", Genre = "Television", Location = "http://localhost:50990/Sounds/ctu-24-ringtone.mp3", Time = "00:03"},
                new Sound {Title = "Hi-Hat", Genre="Drums", Location = "http://localhost:50990/Sounds/45666_pjcohen_Zildjian_A_Custom_Hi_Hat_Cymbals_Loose_Hit.WAV", Time = "00:01"},
@@ -50,12 +51,12 @@ namespace CapstoneProject.Migrations
                new Sound {Title =  "29 Artillery Bursts", Genre = "Weapons", Location = "http://localhost:50990/Sounds/29 Artillery Bursts (3).mp3", Time = "00:16" }, 
                new Sound {Title = "30 Rifle Shots", Genre = "Weapons", Location = "http://localhost:50990/Sounds/30 Rifle Shots.mp3", Time = "00:23" }
            };
-
+            //this little loop auto assigns an id to each sound
             for(int i = 0; i < sounds.Count; i++){
                 sounds[i].SoundID = i;
             }
             sounds.ForEach(s => context.Sounds.AddOrUpdate(p => p.Title, s));
-            context.SaveChanges();
+            context.SaveChanges(); //need to save it!
         }
     }
 }

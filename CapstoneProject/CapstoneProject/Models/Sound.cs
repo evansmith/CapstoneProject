@@ -7,6 +7,7 @@ namespace CapstoneProject.Models
 {
     public class Sound
     {
+        //This is the sound database model I'm currently using. 
         public int SoundID { get; set; }
         public string Title {get; set; }
         public string Location {get; set;}

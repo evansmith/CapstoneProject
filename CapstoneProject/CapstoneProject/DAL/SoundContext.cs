@@ -7,6 +7,6 @@ namespace CapstoneProject.DAL
 {
     public class SoundContext : DbContext
     {
-        public DbSet<Sound> Sounds { get; set; } 
+        public DbSet<Sound> Sounds { get; set; } //This sets the sounds context that will be accessed throughout the project.
     }
 }
