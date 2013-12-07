@@ -1,30 +1,32 @@
 ﻿<div id="library">
-<form class="form-search">
-    <div class="input-append">
-        <input type="text" ng-model="search" class="input-medium search-query" placeholder="Search" />
-        <button ng-click="reset()" type="submit" class="btn">Search</button>
-    </div>
-    <button ng-click="search=''; reset()" ng-disable="!query" type="submit" class="btn">Reset</button>
-</form>
+    <form class="form-search">
+        <div class="input-append">
+            <input type="text" ng-model="search" class="input-medium search-query" placeholder="Search" />
+            <button ng-click="reset()" type="submit" class="btn">Search</button>
+        </div>
+        <button ng-click="search=''; reset()" ng-disable="!query" type="submit" class="btn">Reset</button>
+    </form>
 
-<table class="table table-hover table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Sound Title</th>
-            <th>Genre</th>
-            <th>Length</th>
-            <th>Sample</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="sound in sounds" >
-            <td>{{sound.Title}}</td>
-            <td>{{sound.Genre}}</td>
-            <td>{{sound.Time}}</td>
-            <td>{{sound.song}}<a class="btn" ng-click="play(sound)"><i class="icon-volume-up"></i> Preview</a> <a class="btn" ng-click="stop(sound)"><i class="icon-stop"</i></a></td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sound Title</th>
+                <th>Genre</th>
+                <th>Length</th>
+                <th>Sample</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sound in sounds" >
+                <td>{{sound.Title}}</td>
+                <td>{{sound.Genre}}</td>
+                <td>{{sound.Time}}</td>
+                <td>{{sound.song}}<a class="btn" ng-click="play(sound)"><i class="icon-volume-up"></i> Preview</a> <a class="btn" ng-click="stop(sound)"><i class="icon-stop"</i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn" href="" ng-click ="offset = offset + limit; searchBar()" ng-show ="moreSounds()">Load More Sounds</a>
 </div>
 
 

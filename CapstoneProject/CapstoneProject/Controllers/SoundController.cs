@@ -14,7 +14,7 @@ namespace CapstoneProject.Controllers
     {
         private SoundContext db = new SoundContext();
         // GET api/sound
-        public IEnumerable<Sound> GetSounds(string s = null, string sort = null, bool desc = false)
+        public IEnumerable<Sound> GetSounds(string s = null, string sort = null, bool desc = false, int? limit = null, int offset = 0)
         {
             var soundList = ((IObjectContextAdapter)db).ObjectContext.CreateObjectSet<Sound>();
             IQueryable<Sound> sounds = string.IsNullOrEmpty(sort) ? soundList.OrderBy(o => o.SoundID)
@@ -23,6 +23,11 @@ namespace CapstoneProject.Controllers
             {
                 sounds = sounds.Where(t => t.Title.Contains(s) || t.Genre.Contains(s));
             }
+
+            if (offset > 0)
+                sounds = sounds.Skip(offset);
+            if (limit.HasValue)
+                sounds = sounds.Take(limit.Value);
 
             return sounds;
         }
