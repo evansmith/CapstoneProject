@@ -53,4 +53,7 @@ var MainCtrl = function ($scope, $location, SoundFactory) { //this is the main c
         $scope.currentSong.stop(); //stops the sound on button press. 
     };
 
+    
+
+
 };

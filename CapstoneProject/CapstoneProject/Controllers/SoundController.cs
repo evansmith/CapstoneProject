@@ -23,7 +23,6 @@ namespace CapstoneProject.Controllers
             {
                 sounds = sounds.Where(t => t.Title.Contains(s) || t.Genre.Contains(s)); //search for either title or genre
             }
-
             if (offset > 0) //this offset is related to the paging
                 sounds = sounds.Skip(offset);
             if (limit.HasValue) //this limit is related to the paging.
